@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:deliveroo.fr)",
+      "WebSearch",
+      "WebFetch(domain:lacarte.menu)",
+      "WebFetch(domain:www.eat-list.fr)",
+      "WebFetch(domain:restaurantguru.com)",
+      "WebFetch(domain:www.tripadvisor.com)",
+      "WebFetch(domain:www.misterdoner.com)",
+      "WebFetch(domain:www.adanakebab.fr)",
+      "WebFetch(domain:shawarmaxfrance.fr)",
+      "WebFetch(domain:eater.space)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(npm install *)",
+      "Bash(pnpm create *)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npx create-next-app@latest kebab-dor --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const s = require\\('stripe'\\); console.log\\(Object.keys\\(s\\).slice\\(0,3\\)\\)\")",
+      "Bash(node -e \"require\\('stripe'\\); const pkg = require\\('./node_modules/stripe/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(node -e \"const Stripe = require\\('./node_modules/stripe'\\); console.log\\(Stripe.PACKAGE_VERSION, Stripe.API_VERSION || 'none'\\)\")",
+      "Bash(node -e \"const p = require\\('./node_modules/stripe/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(gh --version)",
+      "Bash(git --version)",
+      "Bash(gh auth *)"
+    ]
+  }
+}

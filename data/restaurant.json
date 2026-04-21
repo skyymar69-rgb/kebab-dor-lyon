@@ -1,0 +1,100 @@
+{
+  "name": "Kebab d'Or – La Mer Égée",
+  "shortName": "Kebab d'Or",
+  "tagline": "Le goût du vrai kebab halal à Vaise",
+  "description": "Restaurant kebab halal à Lyon Vaise (9e), spécialisé dans les grillades méditerranéennes et turques. Portions généreuses, viande sélectionnée, personnalisation totale de votre assiette.",
+  "address": {
+    "street": "37 rue Marietton",
+    "city": "Lyon",
+    "postalCode": "69009",
+    "arrondissement": "9e",
+    "quartier": "Vaise",
+    "country": "France",
+    "lat": 45.7676,
+    "lng": 4.8113
+  },
+  "contact": {
+    "phone": "+33478472426",
+    "phoneDisplay": "+33 4 78 47 24 26",
+    "email": "kebabdor@yahoo.fr"
+  },
+  "transport": {
+    "metro": "Valmy (ligne D)",
+    "metroDistanceM": 110
+  },
+  "legal": {
+    "raisonSociale": "LAC DE VAN",
+    "formeJuridique": "SASU",
+    "siren": "929 846 244",
+    "siret": "929 846 244 00010",
+    "tva": "FR37929846244",
+    "rcs": "929 846 244 R.C.S. Lyon",
+    "capital": "750,00 €",
+    "dirigeant": "Temizer Helin",
+    "dateCreation": "14/05/2024",
+    "codeNaf": "56.10A",
+    "conventionCollective": "Hôtels, cafés, restaurants (HCR) — IDCC 1979",
+    "adresseSiege": "37 RUE MARIETTON, 69009 LYON"
+  },
+  "developer": {
+    "raisonSociale": "KAYZEN LYON",
+    "formeJuridique": "SASU",
+    "siren": "999 418 346",
+    "siret": "999 418 346 000 14",
+    "rcs": "Lyon — 999 418 346",
+    "tva": "FR85 999 418 346",
+    "codeApe": "4791B",
+    "adresse": "6, rue Pierre TERMIER 69009 LYON",
+    "telephone": "+33 (0)4 87 77 68 61",
+    "email": "contact@kayzen-lyon.fr",
+    "siteWeb": "https://internet.kayzen-lyon.fr",
+    "nomCommercial": "Kayzen Web"
+  },
+  "openingHours": [
+    { "dayOfWeek": 0, "closed": true, "openTime": null, "closeTime": null },
+    { "dayOfWeek": 1, "closed": false, "openTime": "11:00", "closeTime": "22:30" },
+    { "dayOfWeek": 2, "closed": false, "openTime": "11:00", "closeTime": "22:30" },
+    { "dayOfWeek": 3, "closed": false, "openTime": "11:00", "closeTime": "22:30" },
+    { "dayOfWeek": 4, "closed": false, "openTime": "11:00", "closeTime": "22:30" },
+    { "dayOfWeek": 5, "closed": false, "openTime": "15:00", "closeTime": "23:30" },
+    { "dayOfWeek": 6, "closed": false, "openTime": "11:00", "closeTime": "23:30" }
+  ],
+  "seo": {
+    "keywords": [
+      "kebab Lyon 9",
+      "kebab halal Vaise",
+      "kebab Marietton",
+      "commander kebab Lyon livraison",
+      "kebab ouvert tard Lyon",
+      "restaurant turc Lyon Vaise",
+      "kebab halal Lyon",
+      "grillades méditerranéennes Lyon"
+    ],
+    "localBusiness": {
+      "type": "FastFoodRestaurant",
+      "servesCuisine": ["Turkish", "Mediterranean", "Halal"],
+      "priceRange": "€€"
+    }
+  },
+  "social": {
+    "facebook": null,
+    "instagram": null,
+    "tiktok": null
+  },
+  "ratings": {
+    "restaurantGuru": { "score": 4.5, "count": 539 },
+    "tripadvisor": { "score": 3.8, "count": 23 },
+    "google": { "score": 4.5, "count": 157 }
+  },
+  "features": {
+    "halal": true,
+    "clickCollect": true,
+    "delivery": true,
+    "onlinePayment": true,
+    "onSitePayment": true,
+    "customizable": true
+  },
+  "minOrderDelivery": 15,
+  "estimatedPrepTime": 15,
+  "estimatedDeliveryTime": 30
+}

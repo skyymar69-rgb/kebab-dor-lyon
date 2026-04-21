@@ -1,0 +1,376 @@
+[
+  {
+    "id": "menu-sandwich-kebab",
+    "category": "menu",
+    "name": "Menu Sandwich Kebab",
+    "description": "Sandwich kebab (veau-agneau) avec frites ou boulgour ou riz + boisson. Composez votre sandwich : crudités, sauces au choix.",
+    "basePrice": 13.65,
+    "image": "/menu/sandwich-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage fondu", "price": 0.80 },
+        { "name": "Œuf", "price": 0.80 }
+      ]
+    },
+    "tags": ["populaire"]
+  },
+  {
+    "id": "sandwich-kebab",
+    "category": "sandwich",
+    "name": "Sandwich Kebab",
+    "description": "Sandwich kebab sur pain maison, garni de viande grillée, crudités fraîches et sauces au choix. Simple et généreux.",
+    "basePrice": 7.40,
+    "image": "/menu/sandwich-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage fondu", "price": 0.80 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "menu-assiette-kebab",
+    "category": "menu",
+    "name": "Menu Assiette Kebab",
+    "description": "Assiette kebab généreuse — viande grillée, accompagnement au choix, crudités, sauce + boisson. Le classique de la maison.",
+    "basePrice": 13.65,
+    "image": "/menu/assiette-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage fondu", "price": 0.80 },
+        { "name": "Portion de frites supplémentaire", "price": 2.00 }
+      ]
+    },
+    "tags": ["populaire"]
+  },
+  {
+    "id": "assiette-kebab",
+    "category": "assiette",
+    "name": "Assiette Kebab",
+    "description": "Assiette généreuse de viande kebab grillée, accompagnement et crudités. Sans boisson.",
+    "basePrice": 9.50,
+    "image": "/menu/assiette-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "menu-geant-kebab",
+    "category": "menu",
+    "name": "Menu Géant Kebab",
+    "description": "Pour les grands appétits : double portion de viande grillée dans une assiette maxi, accompagnement + boisson. Incontournable.",
+    "basePrice": 21.06,
+    "image": "/menu/assiette-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage fondu", "price": 0.80 }
+      ]
+    },
+    "tags": ["populaire", "epice"]
+  },
+  {
+    "id": "menu-tacos",
+    "category": "menu",
+    "name": "Menu Tacos",
+    "description": "Tacos à la française — tortilla garnie de viande, frites, fromage fondu et sauce, avec accompagnement + boisson.",
+    "basePrice": 15.47,
+    "image": "/menu/tacos.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage supplémentaire", "price": 0.80 }
+      ]
+    },
+    "tags": ["populaire"]
+  },
+  {
+    "id": "menu-maxi-tacos",
+    "category": "menu",
+    "name": "Menu Maxi Tacos",
+    "description": "Le tacos XXL — tortilla géante avec double viande, frites, fromage fondu, sauces généreuses + boisson. Pour les vrais.",
+    "basePrice": 21.06,
+    "image": "/menu/tacos.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage supplémentaire", "price": 0.80 }
+      ]
+    },
+    "tags": ["populaire", "epice"]
+  },
+  {
+    "id": "tacos",
+    "category": "tacos",
+    "name": "Tacos",
+    "description": "Tacos à la française sans boisson. Tortilla garnie de viande grillée, frites, fromage fondu et sauce au choix.",
+    "basePrice": 10.00,
+    "image": "/menu/tacos.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)", "Steak haché"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 },
+        { "name": "Fromage supplémentaire", "price": 0.80 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "menu-roule",
+    "category": "menu",
+    "name": "Menu Roulé",
+    "description": "Roulé kebab — viande grillée, crudités et sauce dans un pain souple chaud, avec accompagnement + boisson. Pratique et savoureux.",
+    "basePrice": 12.35,
+    "image": "/menu/roule.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)"],
+      "accompagnements": ["Frites", "Riz pilaf", "Boulgour"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 }
+      ]
+    },
+    "tags": ["populaire"]
+  },
+  {
+    "id": "roule",
+    "category": "roule",
+    "name": "Roulé Kebab",
+    "description": "Roulé kebab — viande, crudités, sauce dans un pain souple. Sans accompagnement ni boisson.",
+    "basePrice": 7.50,
+    "image": "/menu/roule.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet", "Köfte (boulette épicée)"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "supplements": [
+        { "name": "Sauce supplémentaire", "price": 0.50 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "menu-hamburger",
+    "category": "menu",
+    "name": "Menu Hamburger",
+    "description": "Burger maison avec viande halal grillée, crudités, sauce + frites et boisson. Quand on a envie de changer.",
+    "basePrice": 11.05,
+    "image": "/menu/burger.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Steak haché halal", "Escalope de poulet"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Coca-Cola Zero 33cl", "Orangina 33cl", "Oasis Tropical 33cl", "Jus de Pêche 25cl", "Eau 50cl"],
+      "supplements": [
+        { "name": "Fromage fondu", "price": 0.80 },
+        { "name": "Œuf", "price": 0.80 },
+        { "name": "Bacon halal", "price": 1.00 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "burger",
+    "category": "burger",
+    "name": "Hamburger",
+    "description": "Burger maison avec viande halal, crudités et sauce. Sans accompagnement ni boisson.",
+    "basePrice": 6.50,
+    "image": "/menu/burger.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Steak haché halal", "Escalope de poulet"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Harissa", "Samouraï", "Ketchup", "Mayonnaise"],
+      "supplements": [
+        { "name": "Fromage fondu", "price": 0.80 },
+        { "name": "Œuf", "price": 0.80 }
+      ]
+    },
+    "tags": []
+  },
+  {
+    "id": "menu-enfant",
+    "category": "enfant",
+    "name": "Menu Enfant",
+    "description": "Sandwich kebab ou escalope taille enfant, petites frites + boisson. Halal, pour les 12 ans et moins.",
+    "basePrice": 7.50,
+    "image": "/menu/sandwich-kebab.webp",
+    "halal": true,
+    "options": {
+      "viandes": ["Kebab veau-agneau", "Escalope de poulet"],
+      "sauces": ["Sauce blanche (yaourt-ail)", "Ketchup", "Mayonnaise"],
+      "boissons": ["Coca-Cola 33cl", "Orangina 33cl", "Jus de Pêche 25cl", "Eau 50cl"]
+    },
+    "tags": []
+  },
+  {
+    "id": "frites",
+    "category": "assiette",
+    "name": "Portion de Frites",
+    "description": "Frites dorées, croustillantes à l'extérieur, moelleuses à l'intérieur.",
+    "basePrice": 3.00,
+    "image": "/menu/frites.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "coca-cola",
+    "category": "boisson",
+    "name": "Coca-Cola 33cl",
+    "description": "Coca-Cola canette 33cl.",
+    "basePrice": 2.00,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "coca-cola-zero",
+    "category": "boisson",
+    "name": "Coca-Cola Zero 33cl",
+    "description": "Coca-Cola Zero canette 33cl.",
+    "basePrice": 2.00,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "orangina",
+    "category": "boisson",
+    "name": "Orangina 33cl",
+    "description": "Orangina canette 33cl.",
+    "basePrice": 2.00,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "oasis-tropical",
+    "category": "boisson",
+    "name": "Oasis Tropical 33cl",
+    "description": "Oasis Tropical canette 33cl.",
+    "basePrice": 2.00,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "jus-peche",
+    "category": "boisson",
+    "name": "Jus de Pêche 25cl",
+    "description": "Jus de pêche 25cl.",
+    "basePrice": 1.50,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "eau",
+    "category": "boisson",
+    "name": "Eau 50cl",
+    "description": "Eau minérale plate ou gazeuse.",
+    "basePrice": 1.00,
+    "image": "/menu/boisson.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "sauce-harissa",
+    "category": "sauce",
+    "name": "Sauce Harissa",
+    "description": "Sauce pimentée maison, pour les amateurs de sensations fortes.",
+    "basePrice": 0.50,
+    "halal": true,
+    "options": {},
+    "tags": ["epice"]
+  },
+  {
+    "id": "sauce-blanche",
+    "category": "sauce",
+    "name": "Sauce Blanche",
+    "description": "Sauce yaourt-ail maison, fraîche et onctueuse.",
+    "basePrice": 0.50,
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "sauce-samourai",
+    "category": "sauce",
+    "name": "Sauce Samouraï",
+    "description": "Sauce samouraï légèrement épicée, parfaite avec les frites.",
+    "basePrice": 0.50,
+    "halal": true,
+    "options": {},
+    "tags": ["epice"]
+  },
+  {
+    "id": "baklava",
+    "category": "dessert",
+    "name": "Baklava",
+    "description": "Pâtisserie orientale au miel et aux pistaches. La douceur de fin de repas.",
+    "basePrice": 2.50,
+    "image": "/menu/dessert.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  },
+  {
+    "id": "yaourt-grec",
+    "category": "dessert",
+    "name": "Yaourt Grec au Miel",
+    "description": "Yaourt grec onctueux nappé de miel. Simple et délicieux.",
+    "basePrice": 3.00,
+    "image": "/menu/dessert.webp",
+    "halal": true,
+    "options": {},
+    "tags": []
+  }
+]

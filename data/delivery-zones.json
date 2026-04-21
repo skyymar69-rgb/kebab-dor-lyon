@@ -1,0 +1,30 @@
+{
+  "restaurantAddress": {
+    "street": "37 rue Marietton",
+    "city": "Lyon",
+    "postalCode": "69009",
+    "lat": 45.7676,
+    "lng": 4.8113
+  },
+  "zones": [
+    {
+      "id": "zone-1",
+      "label": "Zone 1 — Vaise & Lyon 9e",
+      "maxDistanceKm": 2,
+      "deliveryFeeEur": 2.50,
+      "minOrderEur": 15,
+      "postalCodes": ["69009"],
+      "communes": ["Lyon 9e", "Vaise", "Gorge de Loup", "Valmy", "Rochat"]
+    },
+    {
+      "id": "zone-2",
+      "label": "Zone 2 — Lyon 5e & Caluire sud",
+      "maxDistanceKm": 3,
+      "deliveryFeeEur": 3.50,
+      "minOrderEur": 20,
+      "postalCodes": ["69005", "69300"],
+      "communes": ["Lyon 5e (Point-du-Jour, Ste-Foy)", "Caluire-et-Cuire (sud)", "Saint-Rambert"]
+    }
+  ],
+  "outsideZoneMessage": "Désolé, votre adresse est en dehors de notre zone de livraison. Commandez en click & collect au restaurant ou appelez-nous au +33 4 78 47 24 26."
+}
