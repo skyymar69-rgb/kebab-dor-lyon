@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { OpeningBanner } from "@/components/marketing/OpeningBanner";
 import { MapSection } from "@/components/marketing/MapSection";
-import { Star, CheckCircle, Clock, Bike, ShoppingBag, ChevronRight, MapPin, Phone } from "lucide-react";
+import { Star, CheckCircle, Clock, ShoppingBag, ChevronRight, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kebab d'Or – La Mer Égée | Kebab halal Lyon Vaise — Commande en ligne",
@@ -477,7 +477,7 @@ export default function HomePage() {
             id="how-it-works-heading"
             className="font-display text-3xl sm:text-4xl font-bold text-center text-[var(--color-ink)] mb-14"
           >
-            Comment commander ?
+            Commander en click &amp; collect
           </h2>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
             {[
@@ -495,9 +495,9 @@ export default function HomePage() {
               },
               {
                 num: "3",
-                icon: <Bike className="h-6 w-6" aria-hidden="true" />,
-                title: "Récupérez ou on livre",
-                desc: "Click & collect en 15 min au 37 rue Marietton, ou livraison à domicile sous 30 min dans la zone Vaise.",
+                icon: <Clock className="h-6 w-6" aria-hidden="true" />,
+                title: "Récupérez",
+                desc: "Votre commande est prête en 15 min. Récupérez-la directement au 37 rue Marietton, Lyon Vaise.",
               },
             ].map((step) => (
               <li key={step.num} className="flex flex-col items-center text-center">
@@ -520,14 +520,36 @@ export default function HomePage() {
             ))}
           </ol>
 
-          <div className="text-center mt-12">
+          <div className="mt-12 flex flex-col items-center gap-5">
             <Link
               href="/commander"
               className="btn-primary inline-flex items-center gap-2 rounded-xl bg-[var(--color-primary)] px-8 py-4 text-base font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[52px]"
             >
               <ShoppingBag className="h-5 w-5" aria-hidden="true" />
-              Démarrer ma commande
+              Commander — Click &amp; Collect
             </Link>
+            <p className="text-sm text-[var(--color-ink-subtle)] text-center">
+              Pour la <strong>livraison à domicile</strong>, retrouvez-nous sur{" "}
+              <a
+                href="https://deliveroo.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-primary)] hover:underline font-medium"
+                aria-label="Commander en livraison sur Deliveroo (ouvre dans un nouvel onglet)"
+              >
+                Deliveroo
+              </a>{" "}
+              et{" "}
+              <a
+                href="https://www.ubereats.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-primary)] hover:underline font-medium"
+                aria-label="Commander en livraison sur Uber Eats (ouvre dans un nouvel onglet)"
+              >
+                Uber Eats
+              </a>.
+            </p>
           </div>
         </div>
       </section>
