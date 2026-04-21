@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Menu, X, ShoppingBag, ChevronDown, ChevronRight } from "lucide-react";
-import { useCartStore } from "@/lib/cart/store";
+import { Menu, X, ChevronDown, ChevronRight, Phone } from "lucide-react";
 import { CarteContactNumerique } from "./CarteContactNumerique";
 
 const MEGA = [
@@ -52,9 +51,9 @@ const MEGA = [
 ];
 
 const MOBILE_NAV = [
-  { href: "/menu",      label: "Menu" },
-  { href: "/a-propos",  label: "À propos" },
-  { href: "/contact",   label: "Contact" },
+  { href: "/menu",     label: "Menu" },
+  { href: "/a-propos", label: "À propos" },
+  { href: "/contact",  label: "Contact" },
 ];
 
 export function Header() {
@@ -62,11 +61,6 @@ export function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const megaRef    = useRef<HTMLDivElement>(null);
-
-  const itemCount = useCartStore((s) =>
-    s.items.reduce((sum, i) => sum + i.quantity, 0)
-  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -123,12 +117,8 @@ export function Header() {
           {/* Desktop nav */}
           <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-1">
 
-            {/* Menu — déclencheur méga-menu */}
-            <div
-              className="relative"
-              onMouseEnter={openMega}
-              onMouseLeave={closeMega}
-            >
+            {/* Menu avec méga-menu */}
+            <div className="relative" onMouseEnter={openMega} onMouseLeave={closeMega}>
               <button
                 type="button"
                 aria-haspopup="true"
@@ -145,16 +135,10 @@ export function Header() {
               </button>
             </div>
 
-            <Link
-              href="/a-propos"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] transition-colors min-h-[44px] flex items-center"
-            >
+            <Link href="/a-propos" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] transition-colors min-h-[44px] flex items-center">
               À propos
             </Link>
-            <Link
-              href="/contact"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] transition-colors min-h-[44px] flex items-center"
-            >
+            <Link href="/contact" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg)] transition-colors min-h-[44px] flex items-center">
               Contact
             </Link>
           </nav>
@@ -162,30 +146,20 @@ export function Header() {
           {/* Actions droite */}
           <div className="flex items-center gap-2 shrink-0">
             <CarteContactNumerique />
-
-            <Link
-              href="/commander/panier"
-              aria-label={`Panier — ${itemCount} article${itemCount !== 1 ? "s" : ""}`}
-              className="relative p-2 text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            <a
+              href="tel:+33478472426"
+              className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-ink-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors min-h-[44px]"
+              aria-label="Appeler le restaurant au +33 4 78 47 24 26"
             >
-              <ShoppingBag className="h-5 w-5" aria-hidden="true" />
-              {itemCount > 0 && (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--color-primary)] text-[10px] font-bold text-white"
-                >
-                  {itemCount}
-                </span>
-              )}
-            </Link>
-
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              04 78 47 24 26
+            </a>
             <Link
-              href="/commander"
-              className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
+              href="/menu"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
             >
-              Commander
+              Notre menu
             </Link>
-
             <button
               type="button"
               aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -204,7 +178,6 @@ export function Header() {
       {megaOpen && (
         <div
           id="mega-menu"
-          ref={megaRef}
           role="region"
           aria-label="Menu complet — Kebab d'Or"
           className="hidden md:block absolute left-0 right-0 top-full bg-white border-t border-[var(--color-border)] shadow-2xl z-40"
@@ -231,21 +204,21 @@ export function Header() {
                   </p>
                 </div>
                 <Link
-                  href="/commander"
-                  onClick={() => setMegaOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-4 py-3 text-sm font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
-                >
-                  <ShoppingBag className="h-4 w-4" aria-hidden="true" />
-                  Commander maintenant
-                </Link>
-                <Link
                   href="/menu"
                   onClick={() => setMegaOpen(false)}
-                  className="flex items-center justify-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-4 py-3 text-sm font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
                 >
                   Voir tout le menu
                   <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
+                <a
+                  href="tel:+33478472426"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--color-border)] px-4 py-3 text-sm font-semibold text-[var(--color-ink-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors min-h-[44px]"
+                  aria-label="Appeler le restaurant"
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  04 78 47 24 26
+                </a>
               </div>
 
               {/* Catégories */}
@@ -262,7 +235,7 @@ export function Header() {
                       {cat.items.map((item) => (
                         <li key={item.name}>
                           <Link
-                            href="/commander"
+                            href="/menu"
                             onClick={() => setMegaOpen(false)}
                             className="flex items-center justify-between gap-3 group"
                           >
@@ -281,18 +254,9 @@ export function Header() {
               </div>
             </div>
 
-            {/* Barre du bas */}
             <div className="mt-6 pt-5 border-t border-[var(--color-border)] flex items-center justify-between text-xs text-[var(--color-ink-subtle)]">
-              <p>
-                <span className="inline-flex items-center gap-1">
-                  <span aria-hidden="true">🥩</span>
-                  Toute la viande est certifiée halal · TVA 10 % incluse
-                </span>
-              </p>
-              <p>
-                <span aria-hidden="true">📍</span>{" "}
-                37 rue Marietton, 69009 Lyon — Métro Valmy (D)
-              </p>
+              <p><span aria-hidden="true">🥩</span> Toute la viande est certifiée halal · TVA 10 % incluse</p>
+              <p><span aria-hidden="true">📍</span> 37 rue Marietton, 69009 Lyon — Métro Valmy (D)</p>
             </div>
           </div>
         </div>
@@ -306,7 +270,6 @@ export function Header() {
           role="navigation"
           aria-label="Menu mobile"
         >
-          {/* Formules rapides */}
           <div className="px-4 pt-4 pb-2">
             <p className="text-xs font-bold text-[var(--color-primary)] uppercase tracking-wider mb-3">
               Nos formules
@@ -315,7 +278,7 @@ export function Header() {
               {MEGA[0]!.items.slice(0, 6).map((item) => (
                 <Link
                   key={item.name}
-                  href="/commander"
+                  href="/menu"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between rounded-lg bg-[var(--color-bg)] px-3 py-2 text-xs"
                 >
@@ -325,7 +288,6 @@ export function Header() {
               ))}
             </div>
           </div>
-
           <div className="px-4 pb-2 border-t border-[var(--color-border)] mt-2 pt-3">
             <ul className="space-y-1">
               {MOBILE_NAV.map((link) => (
@@ -341,20 +303,19 @@ export function Header() {
               ))}
             </ul>
           </div>
-
           <div className="px-4 pb-4 border-t border-[var(--color-border)] mt-2 pt-3">
-            <Link
-              href="/commander"
-              className="block rounded-xl bg-[var(--color-primary)] px-4 py-3 text-center text-sm font-bold text-white hover:bg-[var(--color-primary-dark)]"
-              onClick={() => setOpen(false)}
+            <a
+              href="tel:+33478472426"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-4 py-3 text-sm font-bold text-white"
+              aria-label="Appeler le restaurant"
             >
-              Commander — Click &amp; Collect
-            </Link>
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              04 78 47 24 26
+            </a>
           </div>
         </div>
       )}
 
-      {/* Backdrop méga-menu */}
       {megaOpen && (
         <div
           className="hidden md:block fixed inset-0 top-16 bg-black/20 z-30"

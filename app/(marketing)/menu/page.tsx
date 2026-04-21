@@ -1,35 +1,33 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ShoppingBag } from "lucide-react";
+import { Phone } from "lucide-react";
 import menuData from "@/data/menu.json";
 import { formatPrice } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Découvrez le menu du Kebab d'Or à Lyon Vaise : sandwichs, assiettes, tacos, roulés, burgers halal. Tout est personnalisable. Commandez en ligne.",
+    "Découvrez le menu du Kebab d'Or à Lyon Vaise : sandwichs, assiettes, tacos, roulés, burgers halal. Tout est personnalisable. Disponible sur place, à emporter, Deliveroo et Uber Eats.",
   alternates: { canonical: "/menu" },
 };
 
 const CATEGORIES = [
-  { id: "menu", label: "Formules" },
+  { id: "menu",     label: "Formules" },
   { id: "sandwich", label: "Sandwichs" },
-  { id: "kebab", label: "Kebab" },
   { id: "assiette", label: "Assiettes" },
-  { id: "tacos", label: "Tacos" },
-  { id: "roule", label: "Roulés" },
-  { id: "burger", label: "Burgers" },
-  { id: "enfant", label: "Enfant" },
-  { id: "boisson", label: "Boissons" },
-  { id: "dessert", label: "Desserts" },
-  { id: "sauce", label: "Sauces" },
+  { id: "tacos",    label: "Tacos" },
+  { id: "roule",    label: "Roulés" },
+  { id: "burger",   label: "Burgers" },
+  { id: "enfant",   label: "Enfant" },
+  { id: "boisson",  label: "Boissons" },
+  { id: "dessert",  label: "Desserts" },
+  { id: "sauce",    label: "Sauces" },
 ] as const;
 
 const TAG_LABELS: Record<string, string> = {
-  populaire: "⭐ Populaire",
-  nouveau: "🆕 Nouveau",
+  populaire:  "⭐ Populaire",
+  nouveau:    "🆕 Nouveau",
   vegetarien: "🥗 Végétarien",
-  epice: "🌶️ Épicé",
+  epice:      "🌶️ Épicé",
 };
 
 export default function MenuPage() {
@@ -46,7 +44,7 @@ export default function MenuPage() {
 
   return (
     <>
-      {/* Header */}
+      {/* En-tête */}
       <section className="bg-[var(--color-ink)] py-16 px-4 text-center">
         <p className="text-[var(--color-accent)] text-sm font-semibold uppercase tracking-wider mb-3">
           Halal · Personnalisable · Généreux
@@ -55,18 +53,20 @@ export default function MenuPage() {
           Notre Menu
         </h1>
         <p className="text-gray-300 max-w-xl mx-auto mb-6">
-          Tout est composable : choisissez votre viande, accompagnement, crudités, sauces et boisson. On fait comme vous voulez.
+          Tout est composable : choisissez votre viande, accompagnement, crudités, sauces et boisson.
+          Sur place, à emporter, ou via Deliveroo et Uber Eats.
         </p>
-        <Link
-          href="/commander"
+        <a
+          href="tel:+33478472426"
           className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-primary)] px-6 py-3 text-sm font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
+          aria-label="Appeler le restaurant au 04 78 47 24 26"
         >
-          <ShoppingBag className="h-4 w-4" aria-hidden="true" />
-          Commander en ligne
-        </Link>
+          <Phone className="h-4 w-4" aria-hidden="true" />
+          Réserver ou commander — 04 78 47 24 26
+        </a>
       </section>
 
-      {/* Sticky category nav */}
+      {/* Nav catégories sticky */}
       <nav
         className="sticky top-16 z-40 bg-white border-b border-[var(--color-border)] overflow-x-auto"
         aria-label="Catégories du menu"
@@ -84,7 +84,7 @@ export default function MenuPage() {
         </div>
       </nav>
 
-      {/* Menu sections */}
+      {/* Sections par catégorie */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 space-y-14">
         {activeCategories.map((cat) => {
           const items = byCategory[cat.id] ?? [];
@@ -102,7 +102,6 @@ export default function MenuPage() {
                     key={item.id}
                     className="bg-white rounded-2xl border border-[var(--color-border)] p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col"
                   >
-                    {/* Tags */}
                     {item.tags && item.tags.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-2">
                         {item.tags.map((tag) => (
@@ -123,8 +122,7 @@ export default function MenuPage() {
                       {item.description}
                     </p>
 
-                    {/* Options preview */}
-                    {item.options && Object.keys(item.options).length > 0 && "viandes" in item.options && (
+                    {"viandes" in (item.options ?? {}) && (
                       <p className="text-xs text-[var(--color-ink-subtle)] mb-3">
                         Viandes : {(item.options as { viandes?: string[] }).viandes?.join(", ")}
                       </p>
@@ -140,15 +138,6 @@ export default function MenuPage() {
                         </span>
                       )}
                     </div>
-
-                    <Link
-                      href={`/commander?item=${item.id}`}
-                      className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
-                      aria-label={`Commander ${item.name} — ${formatPrice(item.basePrice)}`}
-                    >
-                      <ShoppingBag className="h-4 w-4" aria-hidden="true" />
-                      Ajouter au panier
-                    </Link>
                   </article>
                 ))}
               </div>
@@ -157,14 +146,40 @@ export default function MenuPage() {
         })}
       </div>
 
-      {/* Note légale halal */}
-      <div className="bg-green-50 border-t border-green-200 py-6 px-4 text-center text-sm text-green-800">
-        <p>
-          <strong>Viande 100 % Halal.</strong> Toutes nos viandes sont certifiées halal. En cas de doute, n&apos;hésitez pas à nous appeler au{" "}
-          <a href="tel:+33478472426" className="underline font-semibold">
-            +33 4 78 47 24 26
-          </a>.
+      {/* Note halal + commande */}
+      <div className="bg-[var(--color-bg)] border-t border-[var(--color-border)] py-8 px-4 text-center">
+        <p className="text-sm text-[var(--color-ink-muted)] mb-4">
+          <strong className="text-[var(--color-ink)]">Viande 100 % Halal.</strong>{" "}
+          En cas de doute ou pour passer commande, appelez-nous directement.
         </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="tel:+33478472426"
+            className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-primary)] px-6 py-3 text-sm font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
+            aria-label="Appeler le restaurant au 04 78 47 24 26"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            04 78 47 24 26
+          </a>
+          <a
+            href="https://deliveroo.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] px-6 py-3 text-sm font-semibold text-[var(--color-ink-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors min-h-[44px]"
+            aria-label="Commander sur Deliveroo — ouvre dans un nouvel onglet"
+          >
+            Livraison sur Deliveroo
+          </a>
+          <a
+            href="https://www.ubereats.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] px-6 py-3 text-sm font-semibold text-[var(--color-ink-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors min-h-[44px]"
+            aria-label="Commander sur Uber Eats — ouvre dans un nouvel onglet"
+          >
+            Livraison sur Uber Eats
+          </a>
+        </div>
       </div>
     </>
   );

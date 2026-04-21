@@ -16,7 +16,6 @@ const FORMULES = [
 const SITEMAP = [
   { href: "/",                  label: "Accueil" },
   { href: "/menu",              label: "Notre menu" },
-  { href: "/commander",         label: "Commander en ligne" },
   { href: "/a-propos",          label: "À propos" },
   { href: "/contact",           label: "Contact" },
   { href: "/mentions-legales",  label: "Mentions légales" },

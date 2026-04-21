@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { OpeningBanner } from "@/components/marketing/OpeningBanner";
 import { MapSection } from "@/components/marketing/MapSection";
-import { Star, CheckCircle, Clock, ShoppingBag, ChevronRight, MapPin, Phone } from "lucide-react";
+import { Star, ChevronRight, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kebab d'Or – La Mer Égée | Kebab halal Lyon Vaise — Commande en ligne",
+  title: "Kebab d'Or – La Mer Égée | Kebab halal Lyon Vaise",
   description:
-    "Le meilleur kebab halal à Lyon Vaise. Commandez en ligne en click & collect ou livraison. 37 rue Marietton, Lyon 9e. Portions généreuses, personnalisation totale.",
+    "Restaurant kebab halal à Lyon Vaise (9e). Viande grillée, portions généreuses, tout personnalisable. 37 rue Marietton, Lyon. Disponible sur Deliveroo et Uber Eats.",
   alternates: { canonical: "/" },
 };
 
@@ -63,91 +63,79 @@ const MENU_STARS = [
     price: "13,65 €",
     tag: "Le classique",
     img: "/images/restaurant/kebab-sandwich-ouvert.webp",
-    alt: "Sandwich kebab ouvert garni de viande grillée halal, tomates fraîches, maïs et sauce blanche, servi dans un panier tressé — Kebab d'Or Lyon Vaise",
+    alt: "Sandwich kebab ouvert garni de viande grillée halal, tomates fraîches et sauce maison — Kebab d'Or Lyon Vaise",
   },
   {
     name: "Menu Assiette Kebab",
     price: "13,65 €",
     tag: "Généreux",
     img: "/images/restaurant/assiette-kebab-complete.webp",
-    alt: "Assiette kebab complète avec viande grillée, riz, frites dorées, salade fraîche et sauce blanche — Kebab d'Or Lyon 9e",
+    alt: "Assiette kebab complète avec viande grillée, riz, frites dorées et salade fraîche — Kebab d'Or Lyon 9e",
   },
   {
     name: "Menu Géant Kebab",
     price: "21,06 €",
     tag: "Pour les grandes faims",
     img: "/images/restaurant/kebab-geant.webp",
-    alt: "Kebab géant grillé sur pain pita doré avec marques de grill croustillantes — spécialité Kebab d'Or Lyon Vaise",
+    alt: "Kebab géant grillé sur pain pita doré — spécialité Kebab d'Or Lyon Vaise",
   },
   {
     name: "Menu Tacos",
     price: "15,47 €",
     tag: "Tendance",
     img: "/images/restaurant/tacos-ouvert.webp",
-    alt: "Tacos ouvert garni de viande hachée halal, frites et fromage fondu — Kebab d'Or Lyon Marietton",
+    alt: "Tacos ouvert garni de viande hachée halal et fromage fondu — Kebab d'Or Lyon",
   },
   {
     name: "Menu Roulé",
     price: "12,35 €",
     tag: "Pratique",
     img: "/images/restaurant/menu-roule-boisson.webp",
-    alt: "Menu roulé kebab avec frites croustillantes et boisson fraîche — formule complète Kebab d'Or Vaise",
+    alt: "Menu roulé kebab avec frites et boisson — Kebab d'Or Vaise",
   },
   {
     name: "Menu Hamburger",
     price: "11,05 €",
     tag: "Halal",
     img: "/images/restaurant/frites-maison.webp",
-    alt: "Frites maison dorées et croustillantes en accompagnement — Kebab d'Or Lyon 9e",
+    alt: "Frites maison dorées — accompagnement du menu hamburger Kebab d'Or",
   },
 ];
 
 const GALLERY = [
   {
     src: "/images/restaurant/menu-assortiment.webp",
-    alt: "Assortiment complet Kebab d'Or : sandwich kebab, tacos grillé, assiette complète riz-frites-salade, nuggets et roulé — Lyon Vaise",
-    width: 1400,
-    height: 788,
+    alt: "Assortiment complet Kebab d'Or : sandwich kebab, tacos, assiette, nuggets et roulé — Lyon Vaise",
     className: "col-span-2 row-span-2",
-    caption: "Notre assortiment complet",
+    caption: "Notre assortiment",
   },
   {
     src: "/images/restaurant/interieur-restaurant.webp",
-    alt: "Intérieur du restaurant Kebab d'Or à Lyon Vaise, comptoir de commande avec menu affiché et salle de restauration",
-    width: 384,
-    height: 512,
+    alt: "Intérieur du restaurant Kebab d'Or à Lyon Vaise avec comptoir et menu affiché",
     className: "col-span-1 row-span-2",
     caption: "Notre restaurant",
   },
   {
     src: "/images/restaurant/kebab-sandwich-ouvert.webp",
-    alt: "Gros plan d'un kebab sandwich ouvert révélant la garniture généreuse : viande de veau halal grillée, tomates, maïs et sauce maison",
-    width: 1100,
-    height: 1467,
+    alt: "Kebab sandwich ouvert avec viande halal, tomates et sauce — Kebab d'Or Lyon",
     className: "col-span-1",
     caption: "Kebab sandwich",
   },
   {
     src: "/images/restaurant/assiette-kebab-complete.webp",
-    alt: "Assiette kebab complète du Kebab d'Or Lyon : viande grillée sur riz, frites, salade fraîche, sauce blanche et boisson",
-    width: 512,
-    height: 384,
+    alt: "Assiette kebab avec riz, frites et salade — Kebab d'Or Lyon 9e",
     className: "col-span-1",
     caption: "Assiette complète",
   },
   {
     src: "/images/restaurant/tacos-ouvert.webp",
-    alt: "Tacos maison ouvert montrant sa généreuse garniture : steak haché halal, frites et fromage fondu",
-    width: 1200,
-    height: 1200,
+    alt: "Tacos maison ouvert — steak haché et fromage fondu Kebab d'Or",
     className: "col-span-1",
     caption: "Tacos maison",
   },
   {
     src: "/images/restaurant/menu-roule-frites.webp",
-    alt: "Menu roulé kebab servi sur plateau avec une portion de frites généreuse et sauce maison",
-    width: 1200,
-    height: 1200,
+    alt: "Menu roulé kebab avec frites — Kebab d'Or Lyon Vaise",
     className: "col-span-1",
     caption: "Menu roulé",
   },
@@ -164,7 +152,7 @@ const JSON_LD = {
     "/images/restaurant/interieur-restaurant.webp",
   ],
   description:
-    "Restaurant kebab halal à Lyon Vaise (9e), spécialisé dans les grillades méditerranéennes. Personnalisation totale, portions généreuses.",
+    "Restaurant kebab halal à Lyon Vaise (9e). Viande grillée, portions généreuses, personnalisation totale.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "37 rue Marietton",
@@ -173,42 +161,18 @@ const JSON_LD = {
     postalCode: "69009",
     addressCountry: "FR",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 45.7676,
-    longitude: 4.8113,
-  },
+  geo: { "@type": "GeoCoordinates", latitude: 45.7676, longitude: 4.8113 },
   telephone: "+33478472426",
   url: "https://kebabdor-lyon.fr",
   servesCuisine: ["Halal", "Turkish", "Mediterranean"],
   priceRange: "€€",
   hasMap: "https://maps.google.com/?q=37+rue+Marietton+69009+Lyon",
   openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "11:00",
-      closes: "22:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Friday",
-      opens: "15:00",
-      closes: "23:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "11:00",
-      closes: "23:30",
-    },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "11:00", closes: "22:30" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday",   opens: "15:00", closes: "23:30" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "11:00", closes: "23:30" },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.5",
-    reviewCount: "539",
-    bestRating: "5",
-  },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.5", reviewCount: "539", bestRating: "5" },
 };
 
 export default function HomePage() {
@@ -229,7 +193,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/restaurant/menu-assortiment.webp"
-            alt="Assortiment complet du Kebab d'Or Lyon Vaise : sandwich kebab, tacos grillé, assiette kebab avec riz et frites, nuggets et roulé"
+            alt="Assortiment complet du Kebab d'Or Lyon Vaise : sandwich kebab, tacos, assiette avec riz et frites, roulé"
             fill
             className="object-cover opacity-45 hero-image"
             priority
@@ -251,24 +215,25 @@ export default function HomePage() {
             </h1>
             <p className="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed">
               Portions généreuses, viande sélectionnée, chaque assiette composée à votre goût.
-              Commandez en ligne — sans commission Deliveroo.
+              Sur place, à emporter, ou en livraison.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/commander"
+                href="/menu"
                 className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-8 py-4 text-base font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[52px] shadow-lg"
               >
-                <ShoppingBag className="h-5 w-5" aria-hidden="true" />
-                Commander maintenant
+                Voir notre menu
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
               </Link>
-              <Link
-                href="/menu"
+              <a
+                href="tel:+33478472426"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 hover:border-white transition-colors min-h-[52px] backdrop-blur-sm"
+                aria-label="Appeler le restaurant au 04 78 47 24 26"
               >
-                Voir le menu
-                <ChevronRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+                <Phone className="h-5 w-5" aria-hidden="true" />
+                04 78 47 24 26
+              </a>
             </div>
 
             <div className="mt-8 flex items-center gap-2 text-white/80 text-sm">
@@ -295,31 +260,17 @@ export default function HomePage() {
                 Pourquoi choisir Kebab&nbsp;d&apos;Or&nbsp;?
               </h2>
               <p className="text-[var(--color-ink-muted)] mb-8 leading-relaxed">
-                À deux pas du métro Valmy, le Kebab d&apos;Or défend depuis des années la tradition des grillades méditerranéennes : viande fraîche, recettes généreuses, et un accueil à la hauteur.
+                À deux pas du métro Valmy, le Kebab d&apos;Or défend la tradition des grillades méditerranéennes :
+                viande fraîche, recettes généreuses, accueil chaleureux.
               </p>
               <div className="space-y-5">
                 {[
-                  {
-                    icon: "🥩",
-                    title: "Viande halal sélectionnée",
-                    desc: "Veau et agneau certifiés halal, grillés à la broche chaque jour devant vous.",
-                  },
-                  {
-                    icon: "🍽️",
-                    title: "Portions généreuses",
-                    desc: "On ne fait pas dans la demi-mesure. Chaque assiette est composée pour que vous repartiez rassasié.",
-                  },
-                  {
-                    icon: "⚡",
-                    title: "Prêt en 15 minutes",
-                    desc: "Click & collect ou livraison. Commandez en ligne, on s'occupe du reste. Pas de commission, pas d'attente.",
-                  },
+                  { icon: "🥩", title: "Viande halal sélectionnée", desc: "Veau et agneau certifiés halal, grillés à la broche chaque jour devant vous." },
+                  { icon: "🍽️", title: "Portions généreuses",       desc: "On ne fait pas dans la demi-mesure. Chaque assiette est faite pour que vous repartiez rassasié." },
+                  { icon: "⚡",  title: "Service rapide",           desc: "Sur place ou à emporter, vos commandes sont prêtes rapidement. Aussi disponible sur Deliveroo et Uber Eats." },
                 ].map((feat) => (
                   <article key={feat.title} className="flex gap-4 items-start">
-                    <span
-                      className="h-11 w-11 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-center text-xl shrink-0"
-                      aria-hidden="true"
-                    >
+                    <span className="h-11 w-11 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-center text-xl shrink-0" aria-hidden="true">
                       {feat.icon}
                     </span>
                     <div>
@@ -355,26 +306,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BANNIÈRE ANTI-COMMISSION ── */}
-      <section className="bg-[var(--color-primary)] py-10 px-4" aria-label="Avantage commande directe">
-        <div className="mx-auto max-w-4xl text-center text-white">
-          <p className="font-display text-2xl sm:text-3xl font-bold mb-3">
-            Économisez jusqu&apos;à 30 % par rapport à Deliveroo
-          </p>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-            En commandant directement sur notre site, vous payez le prix juste — sans commission plateforme. Et nous, on préserve notre qualité.
-          </p>
-          <Link
-            href="/commander"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[var(--color-primary)] hover:bg-gray-50 transition-colors min-h-[44px]"
-          >
-            Commander sans commission
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── FORMULES POPULAIRES ── */}
+      {/* ── APERÇU MENU ── */}
       <section className="py-20 bg-[var(--color-bg)]" aria-labelledby="menu-preview-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -395,7 +327,7 @@ export default function HomePage() {
                 key={item.name}
                 className="card-hover group rounded-2xl bg-white border border-[var(--color-border)] overflow-hidden shadow-sm"
               >
-                <div className="image-container relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={item.img}
                     alt={item.alt}
@@ -409,12 +341,8 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="p-4 flex items-center justify-between">
-                  <h3 className="font-display text-base font-bold text-[var(--color-ink)]">
-                    {item.name}
-                  </h3>
-                  <p className="font-bold text-[var(--color-primary)] text-lg shrink-0 ml-3">
-                    {item.price}
-                  </p>
+                  <h3 className="font-display text-base font-bold text-[var(--color-ink)]">{item.name}</h3>
+                  <p className="font-bold text-[var(--color-primary)] text-lg shrink-0 ml-3">{item.price}</p>
                 </div>
               </article>
             ))}
@@ -432,7 +360,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── GALERIE PHOTOS ── */}
+      {/* ── GALERIE ── */}
       <section className="py-20 bg-white" aria-labelledby="gallery-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -451,7 +379,7 @@ export default function HomePage() {
             {GALLERY.map((photo, i) => (
               <figure
                 key={photo.src}
-                className={`image-container relative overflow-hidden rounded-2xl ${photo.className}`}
+                className={`image-container relative overflow-hidden rounded-2xl group ${photo.className}`}
               >
                 <Image
                   src={photo.src}
@@ -470,86 +398,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── COMMENT COMMANDER ── */}
-      <section className="py-20 bg-[var(--color-bg)]" aria-labelledby="how-it-works-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2
-            id="how-it-works-heading"
-            className="font-display text-3xl sm:text-4xl font-bold text-center text-[var(--color-ink)] mb-14"
-          >
-            Commander en click &amp; collect
+      {/* ── COMMANDER / LIVRAISON ── */}
+      <section className="py-16 bg-[var(--color-primary)]" aria-labelledby="order-heading">
+        <div className="mx-auto max-w-4xl px-4 text-center text-white">
+          <h2 id="order-heading" className="font-display text-3xl font-bold mb-4">
+            Envie d&apos;un kebab ?
           </h2>
-          <ol className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
-            {[
-              {
-                num: "1",
-                icon: <ShoppingBag className="h-6 w-6" aria-hidden="true" />,
-                title: "Choisissez",
-                desc: "Parcourez le menu, composez votre assiette — viande, accompagnement, sauces, boisson — tout à votre goût.",
-              },
-              {
-                num: "2",
-                icon: <CheckCircle className="h-6 w-6" aria-hidden="true" />,
-                title: "Payez",
-                desc: "Carte en ligne en toute sécurité (Stripe), ou paiement sur place à la récupération. Votre choix.",
-              },
-              {
-                num: "3",
-                icon: <Clock className="h-6 w-6" aria-hidden="true" />,
-                title: "Récupérez",
-                desc: "Votre commande est prête en 15 min. Récupérez-la directement au 37 rue Marietton, Lyon Vaise.",
-              },
-            ].map((step) => (
-              <li key={step.num} className="flex flex-col items-center text-center">
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary)] text-white mb-4 animate-pulse-ring"
-                  aria-hidden="true"
-                >
-                  {step.icon}
-                </div>
-                <span className="text-xs font-bold text-[var(--color-ink-subtle)] uppercase tracking-wider mb-1">
-                  Étape {step.num}
-                </span>
-                <h3 className="font-display text-xl font-bold text-[var(--color-ink)] mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed max-w-xs">
-                  {step.desc}
-                </p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-12 flex flex-col items-center gap-5">
-            <Link
-              href="/commander"
-              className="btn-primary inline-flex items-center gap-2 rounded-xl bg-[var(--color-primary)] px-8 py-4 text-base font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[52px]"
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
+            Venez nous rendre visite au 37 rue Marietton, appelez-nous directement, ou commandez en livraison via nos partenaires.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="tel:+33478472426"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[var(--color-primary)] hover:bg-gray-50 transition-colors min-h-[48px]"
+              aria-label="Appeler le restaurant au 04 78 47 24 26"
             >
-              <ShoppingBag className="h-5 w-5" aria-hidden="true" />
-              Commander — Click &amp; Collect
-            </Link>
-            <p className="text-sm text-[var(--color-ink-subtle)] text-center">
-              Pour la <strong>livraison à domicile</strong>, retrouvez-nous sur{" "}
-              <a
-                href="https://deliveroo.fr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:underline font-medium"
-                aria-label="Commander en livraison sur Deliveroo (ouvre dans un nouvel onglet)"
-              >
-                Deliveroo
-              </a>{" "}
-              et{" "}
-              <a
-                href="https://www.ubereats.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:underline font-medium"
-                aria-label="Commander en livraison sur Uber Eats (ouvre dans un nouvel onglet)"
-              >
-                Uber Eats
-              </a>.
-            </p>
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              04 78 47 24 26
+            </a>
+            <a
+              href="https://deliveroo.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors min-h-[48px]"
+              aria-label="Commander sur Deliveroo (ouvre dans un nouvel onglet)"
+            >
+              Commander sur Deliveroo
+            </a>
+            <a
+              href="https://www.ubereats.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors min-h-[48px]"
+              aria-label="Commander sur Uber Eats (ouvre dans un nouvel onglet)"
+            >
+              Commander sur Uber Eats
+            </a>
           </div>
         </div>
       </section>
@@ -577,11 +461,7 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-1 mb-3" aria-label={`Note : ${review.rating} étoiles sur 5`}>
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-[var(--color-accent)] text-[var(--color-accent)]"
-                      aria-hidden="true"
-                    />
+                    <Star key={i} className="h-4 w-4 fill-[var(--color-accent)] text-[var(--color-accent)]" aria-hidden="true" />
                   ))}
                 </div>
                 <blockquote>
@@ -589,9 +469,7 @@ export default function HomePage() {
                     &ldquo;{review.text}&rdquo;
                   </p>
                   <footer className="text-xs text-[var(--color-ink-subtle)]">
-                    <cite className="font-semibold not-italic text-[var(--color-ink)]">
-                      {review.author}
-                    </cite>{" "}
+                    <cite className="font-semibold not-italic text-[var(--color-ink)]">{review.author}</cite>{" "}
                     — {review.source} · {review.date}
                   </footer>
                 </blockquote>
@@ -621,7 +499,7 @@ export default function HomePage() {
               <div className="image-container relative h-52 rounded-2xl overflow-hidden shadow-md">
                 <Image
                   src="/images/restaurant/interieur-restaurant.webp"
-                  alt="Intérieur du restaurant Kebab d'Or à Lyon Vaise avec comptoir de commande, menu affiché et salle de restauration propre et accueillante"
+                  alt="Intérieur du restaurant Kebab d'Or à Lyon Vaise avec comptoir de commande, menu affiché et salle accueillante"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -662,9 +540,9 @@ export default function HomePage() {
                   <dl className="space-y-1.5 text-sm">
                     {[
                       ["Lun – Jeu", "11h00 – 22h30"],
-                      ["Vendredi", "15h00 – 23h30"],
-                      ["Samedi", "11h00 – 23h30"],
-                      ["Dimanche", "Fermé"],
+                      ["Vendredi",  "15h00 – 23h30"],
+                      ["Samedi",    "11h00 – 23h30"],
+                      ["Dimanche",  "Fermé"],
                     ].map(([day, time]) => (
                       <div key={day} className="flex justify-between">
                         <dt className="text-[var(--color-ink-muted)]">{day}</dt>
@@ -680,7 +558,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center justify-center gap-2 w-full rounded-xl bg-[var(--color-primary)] px-6 py-3 text-sm font-bold text-white hover:bg-[var(--color-primary-dark)] transition-colors min-h-[44px]"
-                aria-label="Obtenir l'itinéraire vers le Kebab d'Or — ouvre Google Maps dans un nouvel onglet"
+                aria-label="Itinéraire Google Maps vers le Kebab d'Or — ouvre dans un nouvel onglet"
               >
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 Voir l&apos;itinéraire sur Google Maps

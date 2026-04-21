@@ -24,7 +24,12 @@
       "Bash(node -e \"const p = require\\('./node_modules/stripe/package.json'\\); console.log\\(p.version\\)\")",
       "Bash(gh --version)",
       "Bash(git --version)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "mcp__4ce49431-28e2-43ec-9333-64a59dbd14a4__deploy_to_vercel",
+      "Bash(vercel deploy *)",
+      "Bash(node -e \"const sharp = require\\('sharp'\\); console.log\\(sharp.versions\\)\")",
+      "Bash(node -e ' *)"
     ]
   }
 }
