@@ -6,18 +6,17 @@ import { eq } from "drizzle-orm";
 
 export const runtime = "nodejs";
 
-const stripe = new Stripe(process.env["STRIPE_SECRET_KEY"] ?? "", {
-  apiVersion: "2026-03-25.dahlia",
-});
-
 export async function POST(req: NextRequest) {
+  const stripeKey = process.env["STRIPE_SECRET_KEY"];
+  const webhookSecret = process.env["STRIPE_WEBHOOK_SECRET"];
   const body = await req.text();
   const sig = req.headers.get("stripe-signature");
-  const webhookSecret = process.env["STRIPE_WEBHOOK_SECRET"];
 
-  if (!sig || !webhookSecret) {
-    return NextResponse.json({ error: "Missing signature" }, { status: 400 });
+  if (!sig || !webhookSecret || !stripeKey) {
+    return NextResponse.json({ error: "Missing configuration" }, { status: 400 });
   }
+
+  const stripe = new Stripe(stripeKey, { apiVersion: "2026-03-25.dahlia" });
 
   let event: Stripe.Event;
   try {
